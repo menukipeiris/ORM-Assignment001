@@ -1,8 +1,9 @@
-package org.example.entity;
+package lk.ijse.entity;
 
 import jakarta.persistence.*;
 
 @Entity
+
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
