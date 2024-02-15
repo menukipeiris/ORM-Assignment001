@@ -1,8 +1,8 @@
-package org.example;
+package lk.ijse;
 
-import org.example.config.FactoryConfiguration;
-import org.example.entity.Author;
-import org.example.entity.Book;
+import lk.ijse.config.FactoryConfiguration;
+import lk.ijse.entity.Author;
+import lk.ijse.entity.Book;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -87,6 +87,5 @@ public class Main {
             transaction.commit();
             session.close();
         }
-
     }
 }
