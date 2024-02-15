@@ -1,22 +1,19 @@
-# **ORM(Object-Relational Mapping) Supplementary Assignment**
+# **ORM Supplementary Assignment 01**
 
 ## **Annotations**
 
 #### **@Entity Annotation**
 
-This annotation, part of the javax. persistence package and is used at the class level and marks the class as a persistence entity.It signals to the JPA provider that this class should be treated as a table in the database.
+The @Entity annotation is used to mark a Java class as an entity, indicating that instances of this class will be persisted to a relational database. An entity in JPA represents a table in a database, and each instance of the entity corresponds to a row in that table.
 
 #### **@Id Annotation**
-
-The @Id annotation is inherited from javax. persistence.id, Indicating that the member-field below is the primary key of the current entity.
+The @Id annotation in Java is used to designate a field or property of an entity class as the primary key.
 
 #### **@GeneratedValue Annotation**
-
-The @GeneratedValue annotation is used to specify how the primary key values of an entity are generated.
+The @GeneratedValue annotation in Java, specifically within the context of the Java Persistence API (JPA), is used to specify how the primary key values for entities should be generated.
 
 #### **@OneToMany Annotation**
-
-@OneToMany annotation in Hibernate is used to obtain one-to-many relationships between two entities. It is used to map a collected-valued association where a single instance of an entity is mapped to multiple instances of another entity.
+This annotation is used to define a one to many relationship between two entities.
 
 #### **@ManyToOne Annotation**
 
@@ -31,7 +28,7 @@ The @JoinColumn annotation in Hibernate is used to specify the mapping of a fore
 
 #### **1.GenerationType.IDENTITY**
 
-This strategy will help us to generate the primary key value by the database itself using the auto-increment column option. It relies on the database's native support for generating unique values.
+GenerationType.IDENTITY is one of the strategies available for generating primary key values in JPA (Java Persistence API) when using the @GeneratedValue annotation.
 
 #### **2.GenerationType.AUTO**
 
@@ -97,4 +94,4 @@ CascadeType.SAVE_UPDATE is a cascading type in Hibernate that specifies that the
 6.Query query5 = session.createQuery("select b from Book b join b.author a where a.country = :countryName");
 
 7.Query query6 = session.createQuery("select a.name from Author a where (select count(b.title) from Book b where b.author = a) > " +
-   "(select avg(count(b.title)) from Book b group by b.author)");
+"(select avg(count(b.title)) from Book b group by b.author)");
